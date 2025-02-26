@@ -8,7 +8,7 @@ on:
 env:
   
   # alphanumeric string under 14 characters
-  RESOURCE_GROUP_NAME: daprkristoff
+  RESOURCE_GROUP_NAME: rg-kristoff-rommel
 
   # specify your preferred region
   REGION: eastus
@@ -43,7 +43,7 @@ jobs:
           echo "Creating resource group in Azure"
           echo "Executing 'az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}'"
 
-          az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
+          az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }} --tags owner=kristoff.verschueren@cloudfuel.be
 
     - name: Creating resources
       uses: azure/CLI@v1
